@@ -1,0 +1,23 @@
+programa
+{
+	funcao inicio ()
+	{
+		inteiro codigo_produto, quantidade_comprada
+		real total
+		
+		real produtos[5]
+	    produtos[1] = 5.00
+		produtos[2] = 3.50
+		produtos[3] = 5.60
+		produtos[4] = 8.90
+		
+		escreva("Código do produto comprado: ")
+		leia(codigo_produto)
+	
+		escreva("Quantidade comprada: ")
+		leia(quantidade_comprada)
+		
+		total = produtos[codigo_produto] * quantidade_comprada
+		escreva("Valor á pagar: ", total)
+	}
+}
