@@ -1,0 +1,26 @@
+programa
+{
+	funcao inicio ()
+	{
+		caracter escala
+        real temperatura, total
+
+        escreva("Você vai digitar a temperatura em qual escala (C/F)?")
+        leia(escala)
+		
+        escreva("Digite a temperatura: ")
+        leia(temperatura)
+
+        se (escala == 'C' || escala == 'c')
+        {
+            total = (temperatura * 9/5) + 32
+            escreva("Temperatura equivalente em Celsius: " + total)
+        }
+        senao se (escala == 'F' || escala == 'f')
+        {
+            total = (temperatura - 32) * 5/9
+            escreva("Temperatura equivalente em Fahrenheit: " + total)
+        }
+		
+	}
+}
