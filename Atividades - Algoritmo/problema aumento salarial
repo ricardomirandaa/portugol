@@ -1,0 +1,35 @@
+programa
+{
+	funcao inicio ()
+	{
+		real salario, salario_novo, aumento
+		inteiro porcentagem
+		
+		escreva("Digite o salário da pessoa: ")
+		leia(salario)
+		
+		se(salario <= 1000)
+		{
+			porcentagem = 20
+		}
+		senao se(salario <= 3000)
+		{
+			porcentagem = 15
+		}
+		senao se(salario <= 8000)
+		{
+			porcentagem = 10
+		}
+		senao
+		{
+			porcentagem = 5
+		}
+		
+		aumento = (salario * porcentagem) / 100
+		salario_novo = salario + aumento
+		
+		escreva("Novo salario: " + salario_novo + "\n")
+		escreva("Aumento foi de: " + aumento + "\n")
+		escreva("Porcentagem: " + porcentagem + "%" + "\n")
+	}
+}
