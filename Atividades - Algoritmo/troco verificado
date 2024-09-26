@@ -2,29 +2,20 @@ programa
 {
 	funcao inicio()
 	{
-	   inteiro valor1, valor2, valor3
+	   real preco, quantidade, recebido, troco
 
-	   escreva("Primeiro valor: ")
-	   leia(valor1)
+	   escreva("Preço unitário do produto: ")
+	   leia(preco)
 
-	   escreva("Segundo valor: ")
-	   leia(valor2)
+	   escreva("Quantidade comprada: ")
+	   leia(quantidade)
 
-	   escreva("Terceiro valor: ")
-	   leia(valor3)
+	   escreva("Dinheiro recebido: ")
+	   leia(recebido)
 
-	   se(valor1 < valor2)
-	   {
-	   	escreva("MENOR= " + valor1)
-	   }
-	   se(valor2 < valor3)
-	   {
-	   	escreva("MENOR = " + valor2)
-	   }
-	   senao
-	   {
-	   	escreva("MENOR = " + valor3)
-	   }
+	   troco = (preco * quantidade) - recebido
+	   
+	   escreva("Troco = " + troco)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -32,7 +23,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 335; 
+ * @POSICAO-CURSOR = 263; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
