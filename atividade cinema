@@ -1,0 +1,64 @@
+programa 
+{
+	funcao inicio()
+	{
+		inteiro idade[100]
+		caracter nome[100]
+		caracter tem_cliente = 's'
+		inteiro i = 0, j = 0
+		
+		hashtag()
+		escreva("\nBEM VINDO AO CINEMA \n")
+		hashtag()
+		
+		faca
+		{
+			i++
+			escreva("\nDigite o nome do cliente: ")
+			
+			leia(nome)
+			
+			escreva("Digite a idade do cliente: ")
+			
+			leia(idade)
+			
+			escreva("Tem cliente na fila? ")
+			leia(tem_cliente)
+			i = i + 1
+		}
+		enquanto(tem_cliente == 's')
+		
+		se(tem_cliente == 'n')
+		{
+			i = 101
+		}
+		
+			escreva("\nRELATÓRIO DE ENTRADA DOS CLIENTES\n")
+			igual()
+			
+			escreva("\nIDADE -> NOME \n")
+			para(j = 0; j < 100; j++)
+			{
+				escreva(idade[j], " -> ", nome[j])
+			}
+	}
+	
+	
+	funcao hashtag()
+	{
+		inteiro i
+		para(i = 0; i < 50; i++)
+		{
+			escreva("#")
+		}
+	}
+	
+	funcao igual()
+	{
+		inteiro i
+		para(i = 0; i < 50; i++)
+		{
+			escreva("=")
+		}
+	}
+}
