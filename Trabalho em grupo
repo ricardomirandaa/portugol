@@ -3,8 +3,9 @@ programa
 	
 	funcao inicio()
 	{
-		cadeia usuario, nome_produto
-		inteiro itens, quantidade, valor, opcao
+		cadeia usuario, nome_produto[100]
+		inteiro itens, quantidade[100], opcao
+		real valor[100], total = 0.0, recebido
 		inteiro i
 		caracter tem_produto = 's'
 
@@ -12,9 +13,10 @@ programa
 		escreva("Digite seu usuário: ")
 		leia(usuario)
 
-		escreva("Selecione o tipo de caixa:")
-		escreva("1: Cixa Rápido (até 15 itens)")
-		escreva("2: Caixa Convencional (ilimitado)")
+		escreva("Selecione o tipo de caixa: \n")
+		escreva("1: Caixa Rápido (até 15 itens) \n")
+		escreva("2: Caixa Convencional (ilimitado) \n")
+          leia(opcao)
           
 		escolha(opcao)
 		{
@@ -22,22 +24,85 @@ programa
 			{
 				faca 
 				{
-					para(i = 1; i = 15; i ++)
+					para(i = 1; i <= 15; i++)
 					{
-						escreva("informe o nome do" + i + "produto")
-						leia(nome_produto)
+						escreva("informe o nome do " + i + " produto: ")
+						leia(nome_produto[i])
 
-						escreva("quantidade do produto")
-						leia(quantidade)
+						escreva("quantidade do produto: ")
+						leia(quantidade[i])
 
 						escreva("informe o valor do produto: ")
-						leia(valor)
+						leia(valor[i])
+
+						escreva("Tem mais produtos no carrinho? \n")
+						leia(tem_produto)
+						
+						se(tem_produto == 'n')
+						{
+							i = 16
+						}
 					}
+					
+				}
+				enquanto(tem_produto == 's')
+				escreva("\n LISTA DE PRODUTOS \n")
+				escreva(nome_produto[i] + quantidade[i] + valor[i])
+
+				
+			}
+			caso 2:
+			{
+				faca
+				{
+					escreva("informe o nome do " + i + " produto: ")
+					leia(nome_produto[i])
+
+					escreva("quantidade do produto: ")
+					leia(quantidade[i])
+
+					escreva("informe o valor do produto: ")
+					leia(valor[i])
+
+					escreva("Tem mais produtos no carrinho? \n")
+					leia(tem_produto)
 				}
 				enquanto(tem_produto == 's')
 			}
 		}
-		
-		
+		          escreva("ESCOLHA A FORMA DE PAGAMENTO: ")
+				escreva("1: Dinheiro ")
+				escreva("2: Pix e Débito ")
+				escreva("3: Cartão de Crédito ")
+
+				escolha(opcao)
+				{
+					caso 1: 
+					{
+						total = 0
+						escreva("Digite o valor recebido em dinheiro \n")
+						leia(recebido)
+						total = quantidade[i] * valor[i]
+						total = total - recebido
+						escreva("TOTAL DA COMPRA: " + total)
+					}
+					caso 2:
+					{
+						total = 0.0
+						
+						leia(recebido)
+						total = quantidade[i] * valor[i]
+						total = total - recebido * 0.12
+						escreva("TOTAL DA COMPRA: " + total)
+					}
+					caso 3:
+					{
+						escreva("troco \n")
+						leia(recebido)
+						total = quantidade[i] * valor[i]
+						total = total - recebido * 0.05
+						escreva("TOTAL DA COMPRA: " + total)
+					}
+				}
 	}
 }
